@@ -34,13 +34,13 @@ RUN code-server --install-extension cmoog.sqlnotebook
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 RUN sudo apt-get install -y python3-pip
-RUN sudo apt-get install -y sqlite3 sqlite3-dev
+RUN sudo apt-get install -y sqlite3
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 
 # -----------
-RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_14.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 
 # Port
