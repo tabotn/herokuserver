@@ -24,24 +24,19 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-RUN code-server --install-extension dongli.python-preview
 RUN code-server --install-extension ms-python.python
 RUN code-server --install-extension KevinRose.vsc-python-indent
 RUN code-server --install-extension cweijan.vscode-database-client2
-RUN code-server --install-extension cmoog.sqlnotebook
+
 
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN sudo apt-get install -y python3-pip
-RUN sudo apt-get install -y python3-venv
-RUN sudo apt-get install -y sqlite3
+RUN sudo apt-get install -y python3-pip python3-venv sqlite3
 
 # Create venv
 RUN python3 -m venv virt
-RUN source virt/bin/activate
-RUN pip install ipykernel
-RUN pip install pandas
+RUN source virt/bin/activate && pip install ipykernel pandas && deactivate
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
