@@ -28,7 +28,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN sudo apt install python3-pip
+RUN sudo apt-get install -y python3-pip
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
