@@ -35,8 +35,8 @@ RUN code-server --install-extension cweijan.vscode-database-client2
 RUN sudo apt-get install -y python3-pip python3-venv sqlite3
 
 # Create venv
-RUN python3 -m venv virt
-RUN source virt/bin/activate && pip install ipykernel pandas && deactivate
+# RUN python3 -m venv virt
+# RUN source virt/bin/activate && pip install ipykernel pandas && deactivate
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
