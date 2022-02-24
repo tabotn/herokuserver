@@ -34,7 +34,14 @@ RUN code-server --install-extension cmoog.sqlnotebook
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 RUN sudo apt-get install -y python3-pip
+RUN sudo apt-get install -y python3-venv
 RUN sudo apt-get install -y sqlite3
+
+# Create venv
+RUN python3 -m venv virt
+RUN source virt/bin/activate
+RUN pip install ipykernel
+RUN pip install pandas
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
